@@ -113,7 +113,7 @@ h1,h2,h3,h4,h5,h6,label,p{
   text-align: right;
 }
 .header {
-  background-color:#986733;
+  background-color:rgb(186,215,157);
   position: relative;
   padding: 1em 0;
 }
@@ -134,7 +134,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 	  margin: 0em 0em 0 2em;
 }
 .top-nav ul li a:hover,.top-nav ul li.active a{
-	color:#ECC30A;
+	color:rgb(249, 173, 87);
 }
 /********** Login *************/
 #loginContainer {
@@ -149,7 +149,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 	margin: 0;
 }
  #loginContainer a span:hover{
-	color:#ECC30A;
+	color:rgb(249, 173, 87);
  }
 /* Login Button */
 #loginButton { 
@@ -235,7 +235,7 @@ fieldset#body {
 #loginForm #login {
 	width: auto;
 	float: left;
-	background: #ECC30A;
+	background: rgb(249, 173, 87);
 	color: #333;
 	font-size: 0.8725em;
 	padding: 8px 20px;
@@ -286,7 +286,7 @@ input:focus {
 }
 .content-text h5{
 	font-size: 1.5em;
-	color:#ECC30A;
+	color:rgb(249, 173, 87);
 	  font-family: 'Karla-Bold';
 	  margin-bottom: 0.5em;
 }
@@ -310,7 +310,7 @@ input:focus {
 }
 .content-middle2 {
 	padding: 3em ;
-	  background-color:#ECC30A;
+	  background-color:rgb(249, 173, 87);
 }
 .content-middle2 h3{
 	font-size:3em;
@@ -354,7 +354,7 @@ i.glyphicon.glyphicon-ok {
 	margin: 0.5em 0;
 }
 .top-event h4 a{
-	color:#ECC30A;
+	color:rgb(249, 173, 87);
 	text-decoration: none;
 }
 .top-event h4 a:hover{
@@ -410,7 +410,7 @@ ul.list1 li a{
 }
 ul.list1 li a:hover{
 	text-decoration:none;
-	color:#ECC30A;
+	color:rgb(249, 173, 87);
 }
 .footer-new1 {
   float: left;
@@ -470,7 +470,7 @@ ul.socials li {
 	font-size:1.1em;
 }
 .footer-bottom p a{
-	color:#ECC30A;
+	color:rgb(249, 173, 87);
 }
 .footer-bottom p a:hover{
 	color:#fff;
@@ -489,7 +489,7 @@ ul.socials li {
   background-size: cover;
 }
 .banner-head h1{
-	color:#ECC30A;
+	color:rgb(249, 173, 87);
 	font-size: 3em;
 	text-align: center;
 	font-family: 'Karla-Bold';
@@ -508,7 +508,7 @@ ul.socials li {
   	text-decoration: none;
 }
 .top-content h4 a:hover{
-	color:#ECC30A;
+	color:rgb(249, 173, 87);
 }
 .top-content p {
   	color: #A1A1A1;
@@ -587,7 +587,7 @@ a.read-more:hover{
   text-align: center;
 }
 .why-top-top{
-	background: #ECC30A;
+	background: rgb(249, 173, 87);
 	padding: 3em 2em;
 	margin: 5em 0;
 }
@@ -622,7 +622,7 @@ a.read-more:hover{
 .text-blog span{
 	float:left;
 	font-size: 2.9em;
-  	color:#ECC30A;
+  	color:rgb(249, 173, 87);
   	  font-weight: bold;
 }
 .text-blog small{
@@ -667,7 +667,7 @@ a.read-more:hover{
 	text-decoration: none;
 }
 .blog-text h5 a:hover{
-  color: #ECC30A;
+  color: rgb(249, 173, 87);
 }
 .blog-top p{
 	font-size: 1em;
@@ -679,7 +679,7 @@ a.more{
 	text-decoration: none;
 	font-size: 1em;
 	color:#fff;
-	background: #ECC30A;
+	background: rgb(249, 173, 87);
 	display: inline-block;
 	padding: 0.6em 1em;
 	text-align: center;
@@ -758,7 +758,7 @@ a.fashion {
 }
 a.elit{
 	font-size:1em;
-	color:#ECC30A;
+	color:rgb(249, 173, 87);
 	text-decoration:none;
 	font-family: 'Karla-Bold';
 }
@@ -790,8 +790,8 @@ ul.pagination {
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, 
 .pagination > .active > span:hover, 
 .pagination > .active > a:focus, .pagination > .active > span:focus{
-  background-color: #ECC30A;
-  border-color: #ECC30A;
+  background-color: rgb(249, 173, 87);
+  border-color: rgb(249, 173, 87);
   color: #fff;
 }
 .pagination > li > a, .pagination > li > span {
@@ -804,7 +804,7 @@ ul.pagination {
 /*--single--*/
 h4.media-heading {
 	font-size: 1.5em;
-  color: #ECC30A;
+  color: rgb(249, 173, 87);
   font-family: 'Karla-Bold';
 }
 .media-body p {
@@ -833,7 +833,7 @@ h4.media-heading {
 .comment-bottom input[type="submit"] {
   width: 11%;
   font-size: 1.1em;
-  background: #ECC30A;
+  background: rgb(249, 173, 87);
   padding: 0.5em 1em;
   text-align: center;
   color: #fff;
@@ -1038,7 +1038,7 @@ figure.effect-oscar:hover img {
 .send input[type="submit"]{
 	width: 14%;
 	font-size: 1.1em;
-	background:#ECC30A;
+	background:rgb(249, 173, 87);
 	padding: 0.4em 0.8em;
 	text-align: center;
 	color: #fff;
