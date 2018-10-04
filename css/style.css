@@ -9,6 +9,15 @@ html,body{
 	font-size: 100%;
 	 font-family: 'Hind-Regular';
 }
+.mt-30{
+	margin-top:30px
+}
+h3.title{
+	border-left: 20px solid rgb(249, 173, 87);
+	padding-left: 10px;
+	text-transform: uppercase;
+}
+
 body a{
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
@@ -69,7 +78,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 	font-family: 'Karla-Bold';
 }
 .head-banner h1 span{
-	color:#986733;
+	color:rgb(249, 173, 87);
 }
 .head-banner h4{
 	font-size: 1.4em;
@@ -113,7 +122,7 @@ h1,h2,h3,h4,h5,h6,label,p{
   text-align: right;
 }
 .header {
-  background-color:#986733;
+  background-color:rgb(249, 173, 87);
   position: relative;
   padding: 1em 0;
 }
@@ -248,7 +257,7 @@ fieldset#body {
 	-o-transition: all .5s;
 }
 #loginForm #login:hover {
-	background: #986733;
+	background: rgb(249, 173, 87);
 	color:#fff;
 }
 /* Forgot your password */
@@ -282,7 +291,7 @@ input:focus {
 }
 .content-ic i{
 	font-size: 1.7em;
-  color: #986733;
+  color: rgb(249, 173, 87);
 }
 .content-text h5{
 	font-size: 1.5em;
@@ -314,7 +323,7 @@ input:focus {
 }
 .content-middle2 h3{
 	font-size:3em;
-	color: #986733 ;
+	color: rgb(249, 173, 87) ;
 	font-family: 'Karla-Bold';
 }
 .content-middle2 p{
@@ -333,7 +342,7 @@ input:focus {
   	text-decoration: none;
 }
 .content-middle2 ul li a:hover {
-  color: #986733;
+  color: rgb(249, 173, 87);
 }
 i.glyphicon.glyphicon-ok {
   padding-right: 10px;
@@ -341,7 +350,7 @@ i.glyphicon.glyphicon-ok {
 /*---*/
 .events h2{
 	font-size:3em;
-	color:#986733;
+	color:rgb(249, 173, 87);
 	font-family: 'Karla-Bold';
 	  text-align: center;
 }
@@ -358,7 +367,7 @@ i.glyphicon.glyphicon-ok {
 	text-decoration: none;
 }
 .top-event h4 a:hover{
-	color:#986733;
+	color:rgb(249, 173, 87);
 }
 .top-event p{
 	font-size: 1em;
@@ -380,7 +389,7 @@ i.glyphicon.glyphicon-calendar {
 }
 /*--footer--*/
 .footer{
-	background: #986733;
+	background: rgb(249, 173, 87);
 	padding:5em 0;
 	position: relative;
 }
@@ -504,7 +513,7 @@ ul.socials li {
   	font-family: 'Karla-Bold';
 }
 .top-content h4 a {
-  	color: #986733;
+  	color: rgb(249, 173, 87);
   	text-decoration: none;
 }
 .top-content h4 a:hover{
@@ -520,7 +529,7 @@ ul.socials li {
 	  padding-bottom: 3.5em;
 }
 .why-top h2{
-	color:#986733;
+	color:rgb(249, 173, 87);
 	font-size: 3em;
 	font-family: 'Karla-Bold';
 }
@@ -532,7 +541,7 @@ ul.socials li {
 }
 a.read-more{
 	text-decoration: none;
-	color:#986733;
+	color:rgb(249, 173, 87);
 	font-size: 1em;
 }
 a.read-more:hover{
@@ -556,7 +565,7 @@ a.read-more:hover{
   display: block;
   color: #fff;
   border-radius: 100px;
-  background-color: #986733;
+  background-color: rgb(249, 173, 87);
   font-size: 2em;
   text-align: center;
   line-height: 2em;
@@ -596,14 +605,14 @@ a.read-more:hover{
 	padding: 5em 0;
 }
 .team h3{
-	color:#986733;
+	color:rgb(249, 173, 87);
 	font-size: 3em;
 	font-family: 'Karla-Bold';
 	text-align: center;
 	margin-bottom: 1em ;
 }
 .team-top h5{
-	color:#986733;
+	color:rgb(249, 173, 87);
 	font-size: 1.3em;
 	font-family: 'Karla-Bold';
 	margin-bottom: 0.3em;
@@ -643,7 +652,7 @@ a.read-more:hover{
   text-decoration: none;
   font-size: 1em;
   color: #fff;
-  background-color: #986733;
+  background-color: rgb(249, 173, 87);
   padding: 1em 1.8em;
   line-height: 3.3em;
 }
@@ -663,7 +672,7 @@ a.read-more:hover{
   margin: 0.6em 0;
 }
 .blog-text h5 a{
-  color: #986733;
+  color: rgb(249, 173, 87);
 	text-decoration: none;
 }
 .blog-text h5 a:hover{
@@ -686,7 +695,7 @@ a.more{
 	  line-height: 1em;
 }
 a.more:hover {
-  background: #986733;
+  background: rgb(249, 173, 87);
 }
 .blog {
   padding: 5em 0;
@@ -848,10 +857,10 @@ h4.media-heading {
   cursor:pointer;
 }
 .comment-bottom input[type="submit"]:hover {
-	background:#986733;
+	background:rgb(249, 173, 87);
 }
 .comment h3,.comment-top h2{
-	color:#986733;
+	color:rgb(249, 173, 87);
 	font-size:3em;
 	font-family: 'Karla-Bold';
 	text-align: center;
@@ -1047,7 +1056,7 @@ figure.effect-oscar:hover img {
 	-webkit-appearance: none;
 }
 .send input[type="submit"]:hover{
-	background:#986733;
+	background:rgb(249, 173, 87);
 }
 .contact-form {
 	padding: 2em 0 3em;
@@ -1244,7 +1253,7 @@ span.menu{
 	z-index: 9999;
 	left: 0%;
 	margin:1.1em 0em;
-	background:#986733;
+	background:rgb(249, 173, 87);
 	border:0;
 }
 .top-nav span.menu{
