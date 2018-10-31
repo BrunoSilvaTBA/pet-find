@@ -16,9 +16,10 @@
             <div class="contact-form">
                 <div class="col-md-6 contact-grid">
                     <h3 class="title">Cadastre-se</h3>
-                    <form>
-                        <input type="text" placeholder="Seu nome">
-                        <input type="text" placeholder="Seu e-mail">
+                    <form action="{{route('cadastrar')}}" method="POST">
+                        @csrf
+                        <input type="text" name="name" placeholder="Seu nome">
+                        <input type="text" name="email" placeholder="Seu e-mail">
 
                         <div class="row">
                             <div class="col-md-6"><input type="password" placeholder="Digite sua senha"></div>
