@@ -23,6 +23,8 @@ Route::get('/adote-me', 'HomeController@adote')->name('adote');
 Route::get('/contato', 'HomeController@contato')->name('contato');
 Route::get('/cadastro', 'HomeController@cadastro')->name('cadastro');
 
+Route::post('/cadastrar', 'UsuarioController@store')->name('cadastrar');
+
 
 
 
