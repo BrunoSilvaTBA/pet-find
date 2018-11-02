@@ -34,9 +34,10 @@
                 </div>
                 <div class="col-md-6 contact-grid">
                     <h3 class="title">Faça seu login</h3>
-                    <form>
-                        <input type="text" placeholder="Seu e-mail">
-                        <input type="password" placeholder="Digite sua senha">
+                    <form action="{{route('logar')}}" method="POST">
+                        @csrf
+                        <input name="email" type="text" placeholder="Seu e-mail">
+                        <input name="password" type="password" placeholder="Digite sua senha">
 
                         <div class="send">
                             <input type="submit" value="Entrar">
