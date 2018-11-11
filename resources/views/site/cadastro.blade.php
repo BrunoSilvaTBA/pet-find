@@ -23,7 +23,7 @@
 
                         <div class="row">
                             <div class="col-md-6"><input type="password" placeholder="Digite sua senha"></div>
-                            <div class="col-md-6"><input type="password" placeholder="Confirme sua senha"></div>
+                            <div class="col-md-6"><input name="password" type="password" placeholder="Confirme sua senha"></div>
                         </div>
 
 

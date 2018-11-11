@@ -4,17 +4,21 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Auth;
+use Illuminate\Support\Facades\Hash;
+use Session;
+use \Illuminate\Session\Middleware\StartSession;
 
 class UsuarioController extends Controller
 {
     public function store(Request $request)
     {
+
         $data['name'] = $request->name;
         $data['email'] = $request->email;
-        $data['password'] = encrypt($request->password);
+        $data['password'] = Hash::make($request->password);
 
-        $stm = User::create($data);
+        User::create($data);
 
         return redirect()->route('cadastro');
 
@@ -24,7 +28,7 @@ class UsuarioController extends Controller
     {
         $credentials = $request->only('email', 'password');
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
 
             return redirect()->route('painel');
         }

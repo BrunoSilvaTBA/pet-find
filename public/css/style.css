@@ -14,8 +14,37 @@ html, body {
     margin-top: 30px
 }
 
-h5.title{
-    border-left:15px solid rgb(249, 173, 87);
+.btn-pet i {
+    font-size: 2em;
+}
+
+.btn-pet small {
+    font-size: 0.4em;
+    color: #a0a0a0;
+}
+
+.btn-pet {
+    text-align: center;
+    font-size: 2em;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.btn-pet.perdi {
+    border-top: 4px solid #2cd34b;
+}
+
+.btn-pet.encontrei {
+    border-top: 4px solid #6460d6;
+}
+
+.btn-pet.doar {
+    border-top: 4px solid #d386d8;
+}
+
+h5.title {
+    border-left: 15px solid rgb(249, 173, 87);
     padding-left: 10px;
     text-transform: uppercase;
 }
@@ -601,11 +630,19 @@ ul.socials li {
     display: flex;
     align-items: center;
 }
-.listabanner{
+
+.listabanner {
     margin-left: 20px;
 }
-.mt-20{margin-top: 20px}
-.mt-50{margin-top: 50px}
+
+.mt-20 {
+    margin-top: 20px
+}
+
+.mt-50 {
+    margin-top: 50px
+}
+
 .banner-head h1 {
     color: rgb(0, 0, 0);
     font-size: 2em;

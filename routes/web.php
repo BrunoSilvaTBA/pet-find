@@ -15,18 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/sobre', 'HomeController@sobre')->name('sobre');
 Route::get('/adote-me', 'HomeController@adote')->name('adote');
 Route::get('/contato', 'HomeController@contato')->name('contato');
 Route::get('/cadastro', 'HomeController@cadastro')->name('cadastro');
-Route::get('/painel', 'PainelUsuarioController@index')->name('painel');
+
 
 Route::post('/cadastrar', 'UsuarioController@store')->name('cadastrar');
 Route::post('/logar', 'UsuarioController@logar')->name('logar');
 
 
-
+Route::group(['middleware' =>['auth']], function(){
+    Auth::routes();
+    Route::get('/painel', 'PainelUsuarioController@index')->name('painel');
+});
 
