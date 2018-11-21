@@ -10,10 +10,17 @@
             <h1>Cadastre-se ou entre <br>com seu e-mail</h1>
         </div>
     </div>
+
+
     <!--content-->
     <div class="container">
+
         <div class="contact">
+
             <div class="contact-form">
+                @include('messages.index')
+
+
                 <div class="col-md-6 contact-grid">
                     <h3 class="title">Cadastre-se</h3>
                     <form action="{{route('cadastrar')}}" method="POST">

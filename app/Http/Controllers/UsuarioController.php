@@ -8,6 +8,7 @@ use Auth;
 use Illuminate\Support\Facades\Hash;
 use Session;
 use \Illuminate\Session\Middleware\StartSession;
+use App\Http\Helps\MessageHelp;
 
 class UsuarioController extends Controller
 {
@@ -32,6 +33,8 @@ class UsuarioController extends Controller
 
             return redirect()->route('painel');
         }
+
+        MessageHelp::setErroMessage('Confira seus dados e tente novamente');
 
         return redirect()->route('cadastro');
     }

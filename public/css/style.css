@@ -29,6 +29,7 @@ html, body {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .btn-pet.perdi {
@@ -1247,6 +1248,33 @@ figure.effect-oscar:hover img {
     height: 150px;
     border: none;
     padding: 0 15px;
+}
+.m-top-30{
+    margin-top: 30px;
+}
+
+#box-fotos-pet{margin-top: 30px}
+.texto-descritivo {
+    font-size: 1.2em;
+    color: #999999;
+    margin-bottom: 35px;
+    font-style: italic;
+}
+#box-caracteristica{
+    display: none;
+}
+
+select{
+    width: 100%;
+    padding: 1em;
+    margin: 0.5em 0;
+    background: none;
+    outline: none;
+    border: 1px solid #A09F9F;
+    font-size: 1em;
+    height: 56px;
+    color: #A09F9F;
+    font-family: 'Hind-Regular';
 }
 
 .contact-grid input[type="text"], .contact-grid textarea, .contact-grid input[type="password"] {
@@ -2557,4 +2585,28 @@ ul.nav.nav-pills {
         padding: 1em 0 0;
     }
 }
+
+.erroinput{
+    border: 1px solid #ad0303 !important;
+}
+#box-pets .meu-pet h4{
+    margin-bottom: 20px;
+}
+#box-pets .meu-pet {
+    width: 100%;
+    margin-bottom: 15px;
+    border-left: 5px solid #F9AD57;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px 1px rgba(0,0,0,0.3);
+}
+
+#box-pets .meu-pet .tags-pet .tag {
+    display: inline-block;
+    padding: 5px;
+    background: #f9ad57;
+}
+
+
+
 
