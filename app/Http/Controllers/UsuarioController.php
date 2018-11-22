@@ -16,19 +16,14 @@ class UsuarioController extends Controller
 
         $stm = User::create($data);
 
-        return redirect()->route('cadastro');
-
+        return redirect()->route('cadastro');	
+        
     }
 
     public function logar(Request $request)
     {
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-
-            return redirect()->route('painel');
-        }
-
-        return redirect()->route('cadastro');
+    	$credentials = $request->only('email', 'password');
+    	Auth::attempt($credentials)
     }
+
 }
