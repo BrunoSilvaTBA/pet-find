@@ -8,12 +8,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
     <title>Pet Finder</title>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{url('/')}}/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery.min.js"></script>
+    <script src="{{url('/')}}/js/jquery.min.js"></script>
     <!-- Custom Theme files -->
     <!--theme-style-->
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{{url('/')}}/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -27,7 +29,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             window.scrollTo(0, 1);
         } </script>
     <!---->
-    <script src="js/menu_jquery.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="{{url('/')}}/js/menu_jquery.js"></script>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
+
+    @yield('css')
+
 </head>
 <body>
 
@@ -55,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <h4>Posts Recentes</h4>
                 <div class="footer-new">
                     <div class="footer-new1">
-                        <a href="single.html"><img src="images/te.jpg" class="img-responsive" alt=""></a>
+                        <a href="single.html"><img src="{{url('/')}}/images/te.jpg" class="img-responsive" alt=""></a>
                     </div>
                     <div class="footer-new2">
                         <p><a href="single.html">Masagni dolores eoquie voluptaquisquam.</a></p>
@@ -64,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="footer-new">
                     <div class="footer-new1">
-                        <a href="single.html"><img src="images/te2.jpg" class="img-responsive" alt=""></a>
+                        <a href="single.html"><img src="{{url('/')}}/images/te2.jpg" class="img-responsive" alt=""></a>
                     </div>
                     <div class="footer-new2">
                         <p><a href="single.html">Masagni dolores eoquie voluptaquisquam.</a></p>
@@ -73,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="footer-new">
                     <div class="footer-new1">
-                        <a href="single.html"><img src="images/te3.jpg" class="img-responsive" alt=""></a>
+                        <a href="single.html"><img src="{{url('/')}}/images/te3.jpg" class="img-responsive" alt=""></a>
                     </div>
                     <div class="footer-new2">
                         <p><a href="single.html">Masagni dolores eoquie voluptaquisquam. </a></p>

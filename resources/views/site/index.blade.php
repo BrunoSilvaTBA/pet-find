@@ -43,42 +43,7 @@
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                {{--<div class="content-top">--}}
-                    {{--<div class="col-md-4 wel">--}}
-                        {{--<div class="content-ic">--}}
-                            {{--<i class="glyphicon glyphicon-leaf"></i>--}}
-                        {{--</div>--}}
-                        {{--<div class="content-text">--}}
-                            {{--<h5>It is a long established </h5>--}}
-                            {{--<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a--}}
-                                {{--piece of classical Latin literature from 45 BC, making it over 2000 years old</p>--}}
-                        {{--</div>--}}
-                        {{--<div class="clearfix"></div>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-md-4 wel">--}}
-                        {{--<div class="content-ic">--}}
-                            {{--<i class="glyphicon glyphicon-erase"></i>--}}
-                        {{--</div>--}}
-                        {{--<div class="content-text">--}}
-                            {{--<h5>It is a long established </h5>--}}
-                            {{--<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a--}}
-                                {{--piece of classical Latin literature from 45 BC, making it over 2000 years old</p>--}}
-                        {{--</div>--}}
-                        {{--<div class="clearfix"></div>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-md-4 wel">--}}
-                        {{--<div class="content-ic">--}}
-                            {{--<i class="glyphicon glyphicon-grain"></i>--}}
-                        {{--</div>--}}
-                        {{--<div class="content-text">--}}
-                            {{--<h5>It is a long established </h5>--}}
-                            {{--<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a--}}
-                                {{--piece of classical Latin literature from 45 BC, making it over 2000 years old</p>--}}
-                        {{--</div>--}}
-                        {{--<div class="clearfix"></div>--}}
-                    {{--</div>--}}
-                    {{--<div class="clearfix"></div>--}}
-                {{--</div>--}}
+
             </div>
             <!---->
         </div>
@@ -106,55 +71,22 @@
         <!---->
         <div class="events">
             <div class="container">
-                <h2>Animais desaparecidos</h2>
+                <h2>Pets desaparecidos</h2>
+
                 <div class="events-top">
+                    @foreach($pets->desaparecidos as $pet)
                     <div class="col-sm-4 top-event">
-                        <a href="single.html"><img src="images/ev.jpg" class="img-responsive" alt=""></a>
-                        <h4><a href="single.html">Pupy</a></h4>
-                        <span><i class="glyphicon glyphicon-calendar"></i>08/08/2015 11:00 Am</span>
-                        <p>Masagni dolores eoquie voluptaquisquam estqui dolorem ipsumquia dolor sitamnetase adipiscquam
-                            eiuse. </p>
+                        <a href="{{route('ver-pet', $pet->id_pet)}}">
+                            <img src="{{url('/images/pets/' . $pet->fotos()->first()->nome_imagem)}}" class="img-responsive" alt=""></a>
+                        <h4><a href="single.html">{{$pet->nome_pet}}</a></h4>
+                        <span><i class="glyphicon glyphicon-calendar"></i>{{date('d/m/Y', strtotime($pet->created_at))}}</span>
+                        <p>{{$pet->detalhes}}</p>
                     </div>
-                    <div class="col-sm-4 top-event">
-                        <a href="single.html"><img src="images/ev1.jpg" class="img-responsive" alt=""></a>
-                        <h4><a href="single.html">Nininha</a></h4>
-                        <span><i class="glyphicon glyphicon-calendar"></i>08/08/2015 11:00 Am</span>
-                        <p>Masagni dolores eoquie voluptaquisquam estqui dolorem ipsumquia dolor sitamnetase adipiscquam
-                            eiuse. </p>
-                    </div>
-                    <div class="col-sm-4 top-event">
-                        <a href="single.html"><img src="images/ev2.jpg" class="img-responsive" alt=""></a>
-                        <h4><a href="single.html">Thor</a></h4>
-                        <span><i class="glyphicon glyphicon-calendar"></i>08/08/2015 11:00 Am</span>
-                        <p>Masagni dolores eoquie voluptaquisquam estqui dolorem ipsumquia dolor sitamnetase adipiscquam
-                            eiuse. </p>
-                    </div>
+                    @endforeach
+
                     <div class="clearfix"></div>
                 </div>
-                <div class="events-top">
-                    <div class="col-sm-4 top-event">
-                        <a href="single.html"><img src="images/ev3.jpg" class="img-responsive" alt=""></a>
-                        <h4><a href="single.html">Duck</a></h4>
-                        <span><i class="glyphicon glyphicon-calendar"></i>08/08/2015 11:00 Am</span>
-                        <p>Masagni dolores eoquie voluptaquisquam estqui dolorem ipsumquia dolor sitamnetase adipiscquam
-                            eiuse. </p>
-                    </div>
-                    <div class="col-sm-4 top-event">
-                        <a href="single.html"><img src="images/ev4.jpg" class="img-responsive" alt=""></a>
-                        <h4><a href="single.html">Doug</a></h4>
-                        <span><i class="glyphicon glyphicon-calendar"></i>08/08/2015 11:00 Am</span>
-                        <p>Masagni dolores eoquie voluptaquisquam estqui dolorem ipsumquia dolor sitamnetase adipiscquam
-                            eiuse. </p>
-                    </div>
-                    <div class="col-sm-4 top-event">
-                        <a href="single.html"><img src="images/ev5.jpg" class="img-responsive" alt=""></a>
-                        <h4><a href="single.html">Mocinha</a></h4>
-                        <span><i class="glyphicon glyphicon-calendar"></i>08/08/2015 11:00 Am</span>
-                        <p>Masagni dolores eoquie voluptaquisquam estqui dolorem ipsumquia dolor sitamnetase adipiscquam
-                            eiuse. </p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
+
             </div>
         </div>
     </div>

@@ -22,7 +22,7 @@ class Pet extends Migration
             $table->unsignedInteger('user_id');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -33,8 +33,6 @@ class Pet extends Migration
      */
     public function down()
     {
-        Schema::table('pets', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('pets');
     }
 }

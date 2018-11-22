@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Pet;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('site.index');
+        $pets = new \stdClass();
+        $pets->desaparecidos = Pet::where('status', 1)->limit(6)->orderBy('id_pet', 'DESC')->get();
+       //dd($pets);
+
+        return view('site.index')->with('pets', $pets);
     }
     public function contato()
     {
