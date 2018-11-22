@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Caracteristica;
 use App\Pet;
 use App\PetCaracteristica;
 use App\PetImagem;
@@ -36,9 +37,9 @@ class PetController extends Controller
         return $stm;
     }
 
-    public function verPet(Request $request)
+    public function verPet(Pet $pet)
     {
-        return view('site.pet-aberto');
+        return view('site.pet-aberto')->with('pet', $pet);
     }
 
     public function petsPerdidos()
@@ -48,10 +49,18 @@ class PetController extends Controller
 
     public function store(Request $request)
     {
+        $names_imgs = explode(',', $request->names_imgs);
+
+        if (!count($names_imgs)) {
+            return response()->json(['retorno' => false]);
+        }
+
         $stm = new Pet();
         $stm->nome_pet = $request->name;
         $stm->especie_id = $request->especie;
         $stm->raca_id = $request->raca;
+        $stm->status = $request->status;
+        $stm->detalhes = $request->detalhes;
         $stm->user_id = auth()->user()->id;
         $stm->save();
 
@@ -66,10 +75,7 @@ class PetController extends Controller
 
         $this->saveAllCaracteristica($stm, $request);
 
-
-        $names_imgs = explode(',',$request->names_imgs);
-
-        if(count($names_imgs)) {
+        if (count($names_imgs)) {
             foreach ($names_imgs as $imagem) {
                 $this->saveImagemPet($stm, $imagem);
             }
@@ -81,8 +87,10 @@ class PetController extends Controller
 
     private function saveAllCaracteristica(Pet $pet, Request $request)
     {
-        foreach ($request->caracteristica as $caracteristica) {
-            $this->saveCaracteristicas($pet, $caracteristica);
+        if (count($request->caracteristica)) {
+            foreach ($request->caracteristica as $caracteristica) {
+                $this->saveCaracteristicas($pet, $caracteristica);
+            }
         }
     }
 

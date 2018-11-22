@@ -18,8 +18,8 @@ class CreateEspecieCaracteristicaTable extends Migration
             $table->unsignedInteger('caracteristica_id');
             $table->unsignedInteger('especie_id');
 
-            $table->foreign('caracteristica_id')->references('id_caracteristica')->on('caracteristicas');
-            $table->foreign('especie_id')->references('id_especie')->on('especies');
+            $table->foreign('caracteristica_id')->references('id_caracteristica')->on('caracteristicas')->onDelete('cascade');
+            $table->foreign('especie_id')->references('id_especie')->on('especies')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class CreateEspecieCaracteristicaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('especie_caracteristica');
+        Schema::drop('especie_caracteristicas');
     }
 }

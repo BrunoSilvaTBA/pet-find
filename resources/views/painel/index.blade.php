@@ -57,7 +57,6 @@
                                         <div class="col-md-10">
 
                                             <h4>{{$pet->nome_pet}}</h4>
-
                                             @if(count($pet->caracteristicas))
                                                 <div class="tags-pet">
                                                     @foreach($pet->caracteristicas as $caracteristica)

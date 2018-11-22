@@ -18,7 +18,7 @@ class CreateCaracteristicaOpcoesTable extends Migration
             $table->string('nome_opcao',45);
             $table->unsignedInteger('caracteristica_id');
 
-            $table->foreign('caracteristica_id')->references('id_caracteristica')->on('caracteristicas');
+            $table->foreign('caracteristica_id')->references('id_caracteristica')->on('caracteristicas')->onDelete('cascade');
 
             $table->timestamps();
         });

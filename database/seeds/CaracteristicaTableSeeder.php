@@ -16,8 +16,9 @@ class CaracteristicaTableSeeder extends Seeder
             ['nome_caracteristica' => 'Cor dos pelos', 'tipo' => 2],
             ['nome_caracteristica' => 'Cor das penas', 'tipo' => 2],
             ['nome_caracteristica' => 'Porte de raça', 'tipo' => 2],
-            ['nome_caracteristica' => 'Comportamento', 'tipo' => 1],
+            ['nome_caracteristica' => 'Comportamento', 'tipo' => 2],
             ['nome_caracteristica' => 'Castrado', 'tipo' => 2],
+            ['nome_caracteristica' => 'Sexo', 'tipo' => 2],
         ]);
     }
 }

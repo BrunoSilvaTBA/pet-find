@@ -17,13 +17,15 @@ class PainelUsuarioController extends Controller
 
     public function index()
     {
+
         $this->data->meus_pets = Pet::where('user_id', auth()->user()->id)->get();
+
         return view('painel.index')->with('data', $this->data);
     }
 
-    public function cadastrarPet()
+    public function cadastrarPetDesaparecido()
     {
-        return view('painel.cadastropet');
+        return view('painel.cadastropet')->with('status', 1);
     }
 
 }

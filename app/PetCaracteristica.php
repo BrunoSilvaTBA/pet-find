@@ -14,8 +14,6 @@ class PetCaracteristica extends Model
         return $this->belongsTo('App\Pet', 'pet_id', 'id_pet');
     }
 
-
-
     public function detalhe()
     {
         return $this->hasOne('App\CaracteristicaOpcao','id_opcao', 'opcao_id');

@@ -20,7 +20,7 @@ class UsuarioController extends Controller
         $data['password'] = Hash::make($request->password);
 
         User::create($data);
-
+        MessageHelp::setSuccessMessage('Cadastrado com sucesso!');
         return redirect()->route('cadastro');
 
     }

@@ -27,6 +27,6 @@ class CreateEspecieTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('especie');
+        Schema::dropIfExists('especies');
     }
 }

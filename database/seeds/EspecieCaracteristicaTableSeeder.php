@@ -24,7 +24,6 @@ class EspecieCaracteristicaTableSeeder extends Seeder
             ['caracteristica_id' => 3, 'especie_id' => 3],
 
             ['caracteristica_id' => 4, 'especie_id' => 1],
-            ['caracteristica_id' => 4, 'especie_id' => 2],
 
             ['caracteristica_id' => 5, 'especie_id' => 1],
             ['caracteristica_id' => 5, 'especie_id' => 2],
@@ -32,6 +31,10 @@ class EspecieCaracteristicaTableSeeder extends Seeder
 
             ['caracteristica_id' => 6, 'especie_id' => 1],
             ['caracteristica_id' => 6, 'especie_id' => 2],
+
+            ['caracteristica_id' => 7, 'especie_id' => 1],
+            ['caracteristica_id' => 7, 'especie_id' => 2],
+            ['caracteristica_id' => 7, 'especie_id' => 3],
 
 
         ]);

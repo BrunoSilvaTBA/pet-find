@@ -38,6 +38,7 @@
 
                         @csrf
                         <input type="text" name="name" placeholder="Nome do Pet">
+                        <input type="hidden" name="status" value="{{$status}}">
 
                         <div class="row">
                             <div class="col col-md-6">
@@ -53,12 +54,18 @@
                                 </select>
                             </div>
 
+                            <div class="col col-md-12">
+                                <textarea name="detalhes" placeholder="Falei mais sobre seu pet"></textarea>
+                            </div>
+
                             <div id="box-caracteristica" class="col-md-12 mt-30 contact-grid">
                                 <h3 class="title">Caracteristicas</h3>
 
                                 <div class="row" id="caracteristicas">
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
 
@@ -94,6 +101,8 @@
                             </div>
                         </div>
                     </div>
+
+
 
 
                     <div class="col m-top-30 col-md-12">

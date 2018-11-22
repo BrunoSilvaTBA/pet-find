@@ -4,10 +4,24 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 1 - Desaparecidos
+ * 2 - Desaparecidos que foram encontrados
+ * 3 - Para adoção
+ * 4 - Pets que foram adotados *
+ * */
+
 class Pet extends Model
 {
     protected $table = 'pets';
     protected $primaryKey = 'id_pet';
+
+    protected $status_pet = [
+        1 => ['label'=> 'Desaparecido', 'detalhe' => 'Pet desaparecido'],
+        2 => ['label'=> 'Encontrado', 'detalhe' => 'Pet desaparecido mas foi encontrado'],
+        3 => ['label'=> 'Adoção', 'detalhe' => 'Pet disponivel para adoção'],
+        4 => ['label'=> 'Adotado', 'detalhe' => 'Pet que doi adotado'],
+    ];
 
     public function local()
     {

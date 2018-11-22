@@ -27,13 +27,15 @@ Route::get('/bairros/{uf}/{code}', 'BairroController@getBairrosByUFAndCode')->na
 Route::post('/cadastrar', 'UsuarioController@store')->name('cadastrar');
 Route::post('/logar', 'UsuarioController@logar')->name('logar');
 Route::post('/carregar-foto-pet', 'PetController@uploadFotoPet')->name('carregar-foto-pet');
-Route::get('/pet/{slug}', 'PetController@verPet')->name('ver-pet');
+Route::get('/pet/{pet}', 'PetController@verPet', function(App\Pet $pet){
+    return $pet;
+})->name('ver-pet');
 
 Route::group(['middleware' =>['auth']], function(){
     Auth::routes();
 
     Route::get('/painel', 'PainelUsuarioController@index')->name('painel');
-    Route::get('/painel/cadastrar-pet', 'PainelUsuarioController@cadastrarPet')->name('cadastrar.pet');
+    Route::get('/painel/cadastrar-pet-desaparecido', 'PainelUsuarioController@cadastrarPetDesaparecido')->name('cadastrar.pet');
     Route::post('/painel/cadastrar-pet', 'PetController@store')->name('cadastrar.pet.post');
 });
 

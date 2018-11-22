@@ -16,7 +16,6 @@ class EspecieTableSeeder extends Seeder
             ['nome_especie' => 'Cão'],
             ['nome_especie' => 'Gato'],
             ['nome_especie' => 'Ave'],
-            ['nome_especie' => 'Cavalo'],
         ]);
     }
 }

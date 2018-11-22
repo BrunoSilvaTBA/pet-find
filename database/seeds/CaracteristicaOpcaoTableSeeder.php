@@ -58,6 +58,9 @@ class CaracteristicaOpcaoTableSeeder extends Seeder
             ['nome_opcao' => 'Pequeno', 'caracteristica_id' => 4 ],
             ['nome_opcao' => 'Médio', 'caracteristica_id' => 4 ],
             ['nome_opcao' => 'Grande', 'caracteristica_id' => 4 ],
+
+            ['nome_opcao' => 'Masculino', 'caracteristica_id' => 7 ],
+            ['nome_opcao' => 'Feminino', 'caracteristica_id' => 7 ],
         ]);
     }
 }
