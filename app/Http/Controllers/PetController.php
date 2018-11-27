@@ -4,10 +4,12 @@
 namespace App\Http\Controllers;
 
 use App\Caracteristica;
+use App\Http\Helps\MessageHelp;
 use App\Pet;
 use App\PetCaracteristica;
 use App\PetImagem;
 use App\PetLocal;
+use http\Env\Response;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -21,7 +23,7 @@ class PetController extends Controller
             ->resize(600, null, function ($constraint) {
                 $constraint->aspectRatio();
             })
-            ->crop(550, 400)
+            ->crop(550, 410)
             ->save(public_path('images/pets/' . $nomearquivo));
 
         return response()->json(['nome' => $nomearquivo]);
@@ -39,12 +41,21 @@ class PetController extends Controller
 
     public function verPet(Pet $pet)
     {
-        return view('site.pet-aberto')->with('pet', $pet);
+        $outrosPets = Pet::where('status', 1)->where('id_pet', '<>', $pet->id_pet)->orderBy('id_pet', 'DESCT')->limit(3)->get();
+
+        return view('site.pet-aberto')
+            ->with('pet', $pet)
+            ->with('outrosPets', $outrosPets);
     }
 
-    public function petsPerdidos()
+    public function petDesaparecidos()
     {
-        return view('site.pets-perdidos');
+        $data = Pet::where('status', 1)
+            ->orderBy('id_pet', 'DESC')
+            ->paginate(15);
+
+
+        return view('site.pets-desaparecidos')->with('pets', $data);
     }
 
     public function store(Request $request)
@@ -80,9 +91,7 @@ class PetController extends Controller
                 $this->saveImagemPet($stm, $imagem);
             }
         }
-
         return $stm;
-
     }
 
     private function saveAllCaracteristica(Pet $pet, Request $request)
@@ -102,5 +111,17 @@ class PetController extends Controller
         $caract->label_caracteristica = $label;
         $caract->save();
         return $caract;
+    }
+
+    public function encontrei(Pet $pet)
+    {
+        MessageHelp::setErroMessage('Aconteceu algum em executar esta ação');
+
+        if($pet->user_id == auth()->user()->id && $pet->status == 1){
+            $pet->status = 2;
+            $pet->save();
+            MessageHelp::setSuccessMessage('Parabéns, ficamos felizes em saber que você reencontrou seu PET que é tão amado!');
+        }
+        return redirect()->route('painel');
     }
 }

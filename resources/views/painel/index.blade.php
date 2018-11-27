@@ -14,6 +14,7 @@
         <div class="events">
             <div class="container">
                 <div class="row">
+                    @include('messages.index')
                     <div class="col col-md-4">
                         <div onclick="window.location='{{route('cadastrar.pet')}}'" class="btn-pet perdi">
                             <i class="fas fa-dog"></i>
@@ -44,7 +45,9 @@
                 </div>
 
                 <div class="row mt-30">
+
                     <div class="col col-md-12">
+
                         @foreach($data->meus_pets as $pet)
                             <div id="box-pets">
                                 <div class="meu-pet">
@@ -56,7 +59,7 @@
                                         </div>
                                         <div class="col-md-10">
 
-                                            <h4>{{$pet->nome_pet}}</h4>
+                                            <h3 class="titlepet">{{$pet->nome_pet}}</h3>
                                             @if(count($pet->caracteristicas))
                                                 <div class="tags-pet">
                                                     @foreach($pet->caracteristicas as $caracteristica)
@@ -67,6 +70,34 @@
                                                             </p>
                                                         </div>
                                                     @endforeach
+
+                                                    @if($pet->status == 1)
+                                                        <div class="row mt-15">
+                                                            <div class="col-md-12">
+                                                                <div class=" ">
+                                                                    <a class="btn pet-encontrato"
+                                                                       href="{{route('pet.encontrei', $pet->id_pet)}}">
+                                                                        Encontrei este pet!
+                                                                    </a>
+
+                                                                    <p class="descricao-btn-encontreipet">Clique no
+                                                                        botão ao lado se realmente você encontrou seu
+                                                                        pet, ficaremos felizes em saber!</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    @endif
+
+                                                    @if($pet->status == 2)
+                                                        <div class="row mt-15">
+                                                            <div class="col-md-12">
+                                                                <p class="descricao-btn-encontreipet color-texto1">
+                                                                    Parabéns, ficamos felizes em saber que você reencontrou seu PET que é tão amado!
+                                                                </p>
+
+                                                            </div>
+                                                        </div>
+                                                    @endif
                                                 </div>
                                             @endif
                                         </div>
