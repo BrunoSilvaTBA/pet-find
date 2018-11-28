@@ -13,7 +13,31 @@ html, body {
 .mt-30 {
     margin-top: 30px
 }
+.mt-15 {
+    margin-top: 15px
+}
 
+.descricao-btn-encontreipet{
+    padding: 6.9px;
+    font-size: 0.8em;
+    margin: 0;
+    font-style: italic;
+    display: inline-block;
+}
+
+.titlepet{
+    padding-left: 10px;
+    border-left: 15px solid #777777;
+    margin-bottom: 15px;
+
+}
+.color-texto1{
+    color: #F9AD57 !important;
+}
+.btn.pet-encontrato {
+    color: #fff;
+    background: #7f7f7f !important;
+}
 .btn-pet i {
     font-size: 2em;
 }
@@ -229,13 +253,40 @@ h1, h2, h3, h4, h5, h6, label, p {
 }
 
 /* Login Button */
-#loginButton {
+#loginButton, #sairButton {
     display: inline-block;
     position: relative;
     z-index: 30;
     cursor: pointer;
 }
+.mb-15{
+    margin-bottom: 15px;
+}
+#box-comentarios {
+    max-height: 350px;
+    overflow-y: auto;
+}
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.top-event{height: 410px; margin-bottom: 30px}
 /* Login Box */
 #loginBox {
     position: absolute;
@@ -2592,7 +2643,10 @@ ul.nav.nav-pills {
         padding: 1em 0 0;
     }
 }
-
+.sweet-alert h2{
+    position: relative;
+    z-index: 999999;
+}
 .erroinput{
     border: 1px solid #ad0303 !important;
 }

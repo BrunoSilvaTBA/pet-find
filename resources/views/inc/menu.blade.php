@@ -11,9 +11,17 @@
                     <li><span>(21)5775-0002</span></li>
                     <label>|</label>
                     <li>
-                        <div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
+                        <div id="loginContainer">
+
+                            @if(auth()->check())
+                                <a href="{{route('sair')}}" id="sairButton"><span>Sair</span></a>
+                            @else
+                                <a href="#" id="loginButton"><span>Login</span></a>
+                            @endif
+
                             <div id="loginBox">
-                                <form id="loginForm">
+                                <form id="loginForm" method="post" action="{{route('logar')}}">
+                                    @csrf
                                     <fieldset id="body">
                                         <fieldset>
                                             <label for="email">E-mail</label>
@@ -26,7 +34,7 @@
                                         <input type="submit" id="login" value="Entrar">
                                         <label for="checkbox"><a href="{{route('cadastro')}}">Cadastrar</a></label>
                                     </fieldset>
-                                    <span><a href="#">Esqueceu sua senha?</a></span>
+                                    {{--<span><a href="#">Esqueceu sua senha?</a></span>--}}
                                 </form>
                             </div>
                         </div>
@@ -37,8 +45,8 @@
                 <span class="menu"><img src="{{url('/')}}/images/menu.png" alt=""> </span>
                 <ul>
                     <li><a href="{{route('home')}}">Início</a></li>
+                    <li><a href="{{route('pets.desaparecidos')}}">Desaparecidos</a></li>
                     <li><a href="{{route('sobre')}}">Sobre</a></li>
-                    <li><a href="{{route('adote')}}">Adote</a></li>
                     <li><a href="{{route('contato')}}">Contato</a></li>
                     @if(auth()->check())
                         <li><a href="{{route('painel')}}">Meu painel</a></li>

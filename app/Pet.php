@@ -37,4 +37,9 @@ class Pet extends Model
     {
         return $this->hasMany('App\PetImagem', 'pet_id', 'id_pet');
     }
+
+    public function comentarios()
+    {
+        return $this->hasMany('App\PetComentario', 'pet_id', 'id_pet');
+    }
 }

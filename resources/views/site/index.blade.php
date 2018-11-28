@@ -78,9 +78,9 @@
                     <div class="col-sm-4 top-event">
                         <a href="{{route('ver-pet', $pet->id_pet)}}">
                             <img src="{{url('/images/pets/' . $pet->fotos()->first()->nome_imagem)}}" class="img-responsive" alt=""></a>
-                        <h4><a href="single.html">{{$pet->nome_pet}}</a></h4>
+                        <h4><a href="{{route('ver-pet', $pet->id_pet)}}">{{$pet->nome_pet}}</a></h4>
                         <span><i class="glyphicon glyphicon-calendar"></i>{{date('d/m/Y', strtotime($pet->created_at))}}</span>
-                        <p>{{$pet->detalhes}}</p>
+                        <p>{{ str_limit($pet->detalhes, 80)}}</p>
                     </div>
                     @endforeach
 
