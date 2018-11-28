@@ -38,6 +38,8 @@ Route::get('/pet/{pet}', 'PetController@verPet', function(App\Pet $pet){
     return $pet;
 })->name('ver-pet');
 
+Route::post('/conato/pet/encontrado', 'PetController@enviarMensagemPetEncontrado')->name('contactar.dono.pet');
+
 Route::group(['middleware' =>['auth']], function(){
     Auth::routes();
     Route::get('/sair', 'PainelUsuarioController@sair')->name('sair');

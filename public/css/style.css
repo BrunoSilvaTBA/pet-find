@@ -2643,7 +2643,10 @@ ul.nav.nav-pills {
         padding: 1em 0 0;
     }
 }
-
+.sweet-alert h2{
+    position: relative;
+    z-index: 999999;
+}
 .erroinput{
     border: 1px solid #ad0303 !important;
 }

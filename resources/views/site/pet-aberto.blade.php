@@ -2,9 +2,8 @@
 
 @section('css')
     <link href="{{url('/plugins/sweetalert/sweetalert.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{url('css/basic.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{url('css/dropzone.css')}}" rel="stylesheet" type="text/css"/>
 @endsection
+
 @section('conteudo')
 
 
@@ -24,7 +23,7 @@
 
             <div class="container">
                 <div class="row">
-                @include('messages.index')
+                    @include('messages.index')
                 </div>
                 <div class="blog-top">
                     <div class="col-md-8 blog-grid">
@@ -117,33 +116,35 @@
                                 <small>Encontrei o Pet e quero fazer o dono dele feliz novamente. Preencha os campos
                                     abaixo que o dono será notificado! Obrigado
                                 </small>
-                                <form>
-                                    <input type="text" placeholder="Seu nome">
-                                    <input type="text" placeholder="Seu celular">
-                                    <textarea style="width: 100%" placeholder="Digite sua mensagem"
+                                <form id="form-encontrei" method="post" action="{{route('contactar.dono.pet')}}">
+                                    @csrf
+                                    <input type="hidden" name="pet_id" value="{{$pet->id_pet}}">
+                                    <input type="text" name="nome" placeholder="Seu nome">
+                                    <input type="text" name="telefone" placeholder="Seu celular">
+                                    <textarea name="mensagem" style="width: 100%" placeholder="Digite sua mensagem"
                                               required=""></textarea>
                                     <input class="btn pull-right " type="submit" value="Enviar contato">
                                 </form>
                             </div>
                         </div>
 
-                        <div class="search-in">
-                            <h3 class="title">Procurar</h3>
-                            <div class="search">
-                                <form>
-                                    <input type="text">
-                                    <input type="submit" value="">
-                                </form>
-                            </div>
-                        </div>
-                        <div class="grid-categories">
-                            <h3 class="title">Categorias</h3>
-                            <ul class="popular">
-                                <li><a href="#"><i class="glyphicon glyphicon-ok"> </i>Ver cães perdidos</a></li>
-                                <li><a href="#"><i class="glyphicon glyphicon-ok"> </i>Ver gatos perdidos</a></li>
-                                <li><a href="#"><i class="glyphicon glyphicon-ok"> </i>Ver aves perdidas</a></li>
-                            </ul>
-                        </div>
+                        {{--<div class="search-in">--}}
+                            {{--<h3 class="title">Procurar</h3>--}}
+                            {{--<div class="search">--}}
+                                {{--<form>--}}
+                                    {{--<input type="text">--}}
+                                    {{--<input type="submit" value="">--}}
+                                {{--</form>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="grid-categories">--}}
+                            {{--<h3 class="title">Categorias</h3>--}}
+                            {{--<ul class="popular">--}}
+                                {{--<li><a href="#"><i class="glyphicon glyphicon-ok"> </i>Ver cães perdidos</a></li>--}}
+                                {{--<li><a href="#"><i class="glyphicon glyphicon-ok"> </i>Ver gatos perdidos</a></li>--}}
+                                {{--<li><a href="#"><i class="glyphicon glyphicon-ok"> </i>Ver aves perdidas</a></li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
                         <div class="blog-bottom">
                             <h3 class="title">Outros Pets perdidos</h3>
 
@@ -171,4 +172,31 @@
         </div>
     </div>
 
+@endsection
+
+@section('js')
+    <script src="{{url('plugins/sweetalert/sweetalert.js')}}"></script>
+    <script>
+        $('#form-encontrei').submit(function () {
+
+            var formData = new FormData($(this)[0]);
+
+            $.ajax({
+                url: '{{route('contactar.dono.pet')}}',
+                data: formData,
+                processData: false,
+                type: 'POST',
+                contentType: false,
+                success: function (data) {
+                    if(data.retorno == true) {
+                        swal("Perfeito", "Obrigado por colaborar para encontrar este PET", "success")
+                    }else{
+                        swal("Erro", "Aconteceu algum erro, tente novamente", "error")
+                    }
+                }
+            });
+
+            return false;
+        })
+    </script>
 @endsection

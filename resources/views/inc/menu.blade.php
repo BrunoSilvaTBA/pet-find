@@ -20,7 +20,8 @@
                             @endif
 
                             <div id="loginBox">
-                                <form id="loginForm">
+                                <form id="loginForm" method="post" action="{{route('logar')}}">
+                                    @csrf
                                     <fieldset id="body">
                                         <fieldset>
                                             <label for="email">E-mail</label>
@@ -33,7 +34,7 @@
                                         <input type="submit" id="login" value="Entrar">
                                         <label for="checkbox"><a href="{{route('cadastro')}}">Cadastrar</a></label>
                                     </fieldset>
-                                    <span><a href="#">Esqueceu sua senha?</a></span>
+                                    {{--<span><a href="#">Esqueceu sua senha?</a></span>--}}
                                 </form>
                             </div>
                         </div>

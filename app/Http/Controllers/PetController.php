@@ -7,6 +7,7 @@ use App\Caracteristica;
 use App\Http\Helps\MessageHelp;
 use App\Pet;
 use App\PetCaracteristica;
+use App\PetContatoEncontrado;
 use App\PetImagem;
 use App\PetLocal;
 use http\Env\Response;
@@ -123,5 +124,16 @@ class PetController extends Controller
             MessageHelp::setSuccessMessage('Parabéns, ficamos felizes em saber que você reencontrou seu PET que é tão amado!');
         }
         return redirect()->route('painel');
+    }
+
+    //página pet aberto, formulário Encontrei este PET
+    public function enviarMensagemPetEncontrado(Request $request)
+    {
+        $data = $request->only(['nome', 'telefone', 'mensagem', 'pet_id']);
+        $retorno = PetContatoEncontrado::create($data);
+
+        $flag = $retorno ? true : false;
+
+        return response()->json(['retorno' => $flag]);
     }
 }

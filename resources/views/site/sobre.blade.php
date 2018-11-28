@@ -11,7 +11,7 @@
 
         <div class="content-middle mt-50">
             <div class="col-md-6 content-middle1">
-                <img src="images/ab.jpg" class="img-responsive" alt="">
+                <img src="{{url('images/ab.jpg')}}" class="img-responsive" alt="">
             </div>
             <div class="col-md-6">
                 <h3 class="title">Sobre</h3>
@@ -35,37 +35,46 @@
         <!--content-top-->
 
         <div class="team">
-            <div class="container">
-                <h3>Team</h3>
+            <h3>Equipe</h3>
+            <div class="container" style="display: flex">
+
                 <div class="col-md-3 team-top">
-                    <img src="images/tee3.jpg" class="img-responsive" alt="">
+                    <img src="{{url('images/equipe/bruno.jpg')}}" class="img-responsive" alt="">
                     <div class="team-text">
-                        <h5>Lorem ipsum</h5>
-                        <p>Lorem ipsum dolor sit</p>
+                        <h5>Bruno Ferreira</h5>
+                        <p>Desenvolvedor</p>
                     </div>
 
                 </div>
                 <div class="col-md-3 team-top">
-                    <img src="images/tee1.jpg" class="img-responsive" alt="">
+                    <img src="{{url('images/equipe/felipe.jpg')}}" class="img-responsive" alt="">
                     <div class="team-text">
-                        <h5>Lorem ipsum</h5>
-                        <p>Lorem ipsum dolor sit</p>
+                        <h5>Felipe Monteiro</h5>
+                        <p>Web Designer</p>
                     </div>
 
                 </div>
                 <div class="col-md-3 team-top">
-                    <img src="images/tee2.jpg" class="img-responsive" alt="">
+                    <img src="{{url('images/equipe/george.jpg')}}" class="img-responsive" alt="">
                     <div class="team-text">
-                        <h5>Lorem ipsum</h5>
-                        <p>Lorem ipsum dolor sit</p>
+                        <h5>George Santos</h5>
+                        <p>Analista de Sistemas</p>
                     </div>
 
                 </div>
                 <div class="col-md-3 team-top">
-                    <img src="images/tee.jpg" class="img-responsive" alt="">
+                    <img src="{{url('images/equipe/marcos.jpg')}}" class="img-responsive" alt="">
                     <div class="team-text">
-                        <h5>Lorem ipsum</h5>
-                        <p>Lorem ipsum dolor sit</p>
+                        <h5>Marcos Nobre</h5>
+                        <p>Gerente de Projetos</p>
+                    </div>
+
+                </div>
+                <div class="col-md-3 team-top">
+                    <img src="{{url('images/equipe/wallace.jpg')}}" class="img-responsive" alt="">
+                    <div class="team-text">
+                        <h5>Wallace Santos</h5>
+                        <p>Analista de Testes</p>
                     </div>
 
                 </div>
