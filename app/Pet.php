@@ -42,4 +42,9 @@ class Pet extends Model
     {
         return $this->hasMany('App\PetComentario', 'pet_id', 'id_pet');
     }
+
+    public function contatos()
+    {
+        return $this->hasMany('App\PetContatoEncontrado', 'pet_id','id_pet');
+    }
 }

@@ -46,6 +46,7 @@ Route::group(['middleware' =>['auth']], function(){
     Route::get('/painel', 'PainelUsuarioController@index')->name('painel');
     Route::get('/painel/cadastrar-pet-desaparecido', 'PainelUsuarioController@cadastrarPetDesaparecido')->name('cadastrar.pet');
     Route::post('/painel/cadastrar-pet', 'PetController@store')->name('cadastrar.pet.post');
+    Route::post('/contatos-pet', 'PetController@listaContatos')->name('contatos.pet');
 
     Route::get('/painel/encontrei-meu-pet/{pet}', 'PetController@encontrei', function(App\Pet $pet){
         return $pet;

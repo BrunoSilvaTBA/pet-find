@@ -1,15 +1,31 @@
 @extends('layouts.app')
 
 @section('conteudo')
+
+    <div class="modal fade" id="modal-dadoscontato" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    <h3 class="title">Entre em contato</h3>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
     <div class="content">
-
-
         <div class="events">
             <div class="container">
                 <h2>MEU PAINEL</h2>
             </div>
         </div>
-
 
         <div class="events">
             <div class="container">
@@ -62,6 +78,13 @@
                                             <h3 class="titlepet">{{$pet->nome_pet}}</h3>
                                             @if(count($pet->caracteristicas))
                                                 <div class="tags-pet">
+                                                    @if($pet->contatos()->count())
+                                                    <p data-pet="{{Crypt::encryptString($pet->id_pet)}}"
+                                                       class="ttoal-contato">
+                                                        <i class="far fa-comment-alt"></i>
+                                                        {{$pet->contatos()->count()}}
+                                                    </p>
+                                                    @endif
                                                     @foreach($pet->caracteristicas as $caracteristica)
                                                         <div class="tag">
                                                             <p>
@@ -92,7 +115,8 @@
                                                         <div class="row mt-15">
                                                             <div class="col-md-12">
                                                                 <p class="descricao-btn-encontreipet color-texto1">
-                                                                    Parabéns, ficamos felizes em saber que você reencontrou seu PET que é tão amado!
+                                                                    Parabéns, ficamos felizes em saber que você
+                                                                    reencontrou seu PET que é tão amado!
                                                                 </p>
 
                                                             </div>
@@ -116,4 +140,47 @@
 
         <!---->
     </div>
+@endsection
+
+@section('js')
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        function htmlContatos(data) {
+            return '<div class="box-contatopet">'+
+            '<p><strong>Nome: </strong>'+data.nome+'</p>'+
+            '<p><strong>Telefone: </strong>'+data.telefone+'</p>'+
+            '<p>'+data.mensagem+'</p>'+
+            '</div>';
+        }
+
+        $('.ttoal-contato').click(function () {
+            var pet = $(this).data('pet');
+            $.ajax({
+                url: '{{route('contatos.pet')}}',
+                type: 'POST',
+                data: {pet: pet},
+                success: function (data) {
+                    var html = '';
+                    $.each(data, function(item, i){
+                        html += htmlContatos(i);
+                    })
+                    console.log(html)
+                    $('#modal-dadoscontato').find('.modal-body').html(html);
+                    if(data.length > 0){
+                        $('#modal-dadoscontato').modal('show')
+                    }
+                }
+            })
+        });
+    </script>
+
+
 @endsection

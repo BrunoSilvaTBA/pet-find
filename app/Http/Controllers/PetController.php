@@ -12,6 +12,7 @@ use App\PetImagem;
 use App\PetLocal;
 use http\Env\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class PetController extends Controller
@@ -19,7 +20,7 @@ class PetController extends Controller
     public function uploadFotoPet(Request $request)
     {
         //http://image.intervention.io/getting_started/installation
-        $nomearquivo = rand() . '.jpg';
+        $nomearquivo = rand() . $request->file('file')->extension();
         $data = Image::make($request->file('file'))
             ->resize(600, null, function ($constraint) {
                 $constraint->aspectRatio();
@@ -118,7 +119,7 @@ class PetController extends Controller
     {
         MessageHelp::setErroMessage('Aconteceu algum em executar esta ação');
 
-        if($pet->user_id == auth()->user()->id && $pet->status == 1){
+        if ($pet->user_id == auth()->user()->id && $pet->status == 1) {
             $pet->status = 2;
             $pet->save();
             MessageHelp::setSuccessMessage('Parabéns, ficamos felizes em saber que você reencontrou seu PET que é tão amado!');
@@ -135,5 +136,11 @@ class PetController extends Controller
         $flag = $retorno ? true : false;
 
         return response()->json(['retorno' => $flag]);
+    }
+
+    public function listaContatos(Request $request)
+    {
+        $contato = Pet::find(Crypt::decryptString($request->pet));
+        return \response()->json($contato->contatos);
     }
 }

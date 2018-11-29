@@ -178,7 +178,7 @@
     <script src="{{url('plugins/sweetalert/sweetalert.js')}}"></script>
     <script>
         $('#form-encontrei').submit(function () {
-
+            var form = $(this);
             var formData = new FormData($(this)[0]);
 
             $.ajax({
@@ -190,6 +190,7 @@
                 success: function (data) {
                     if(data.retorno == true) {
                         swal("Perfeito", "Obrigado por colaborar para encontrar este PET", "success")
+                        form[0].reset();
                     }else{
                         swal("Erro", "Aconteceu algum erro, tente novamente", "error")
                     }
