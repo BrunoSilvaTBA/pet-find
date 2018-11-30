@@ -76,15 +76,16 @@
                                         <div class="col-md-10">
 
                                             <h3 class="titlepet">{{$pet->nome_pet}}</h3>
-                                            @if(count($pet->caracteristicas))
-                                                <div class="tags-pet">
-                                                    @if($pet->contatos()->count())
+                                            @if($pet->contatos()->count())
                                                     <p data-pet="{{Crypt::encryptString($pet->id_pet)}}"
                                                        class="ttoal-contato">
                                                         <i class="far fa-comment-alt"></i>
                                                         {{$pet->contatos()->count()}}
                                                     </p>
                                                     @endif
+                                            
+                                                <div class="tags-pet">
+                                                    @if(count($pet->caracteristicas))
                                                     @foreach($pet->caracteristicas as $caracteristica)
                                                         <div class="tag">
                                                             <p>
@@ -93,6 +94,7 @@
                                                             </p>
                                                         </div>
                                                     @endforeach
+                                                    @endif
 
                                                     @if($pet->status == 1)
                                                         <div class="row mt-15">
@@ -123,7 +125,7 @@
                                                         </div>
                                                     @endif
                                                 </div>
-                                            @endif
+                                            
                                         </div>
                                     </div>
 

@@ -100,7 +100,9 @@ class PetController extends Controller
     {
         if (count($request->caracteristica)) {
             foreach ($request->caracteristica as $caracteristica) {
-                $this->saveCaracteristicas($pet, $caracteristica);
+                if($caracteristica != '00'){
+                    $this->saveCaracteristicas($pet, $caracteristica);
+                }
             }
         }
     }

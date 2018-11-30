@@ -301,6 +301,7 @@
             var nome_pet = $('input[name=name]');
             var especie  = $('select[name=especie]');
             var raca  = $('select[name=raca]');
+            var detalhes  = $('textarea[name=detalhes]');
 
             var uf  = $('select[name=uf]');
             var cidade  = $('select[name=cidade]');
@@ -310,6 +311,7 @@
             raca.removeClass('erroinput');
             uf.removeClass('erroinput');
             cidade.removeClass('erroinput');
+            detalhes.removeClass('erroinput');
 
             if(nome_pet.val() == ''){
                 swal("Ops, cadastro incompleto", 'Informe o nome do seu pet', "error");
@@ -330,6 +332,13 @@
                 swal("Ops, cadastro incompleto", 'Informe a '+label+' do seu pet', "error");
                 raca.focus();
                 raca.addClass('erroinput');
+                return false;
+            }
+
+            if(detalhes.val() == ''){
+                swal("Ops, cadastro incompleto", 'Diga algo sobre seu pet, quanto mais informações será mais fácil de poder ajudar', "error");
+                detalhes.focus();
+                detalhes.addClass('erroinput');
                 return false;
             }
 
@@ -361,6 +370,11 @@
 
             var formData = new FormData($(this)[0]);
             formData.append('names_imgs', names_imgs);
+
+            if(names_imgs.length == 0){
+                swal("Erro", "Selecione pelomenos uma imagem!", "error");
+                return false;
+            }
 
             $.ajax({
                 url: '{{route('cadastrar.pet.post')}}',
